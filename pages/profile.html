@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta charset="UTF-8">
+	<title>客户中心</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="../fonticon/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../fonticon/elusive/css/elusive.css">
+	<link rel="stylesheet" href="../css/phocus.css">
+	<link rel="stylesheet" href="../css/custom.css">
+	<link rel="stylesheet" href="../weui/dist/style/weui.min.css"/>
+</head>
+<body>
+
+	<div class="weui_cells_title">默认联系人</div>
+	<div class="weui_cells weui_cells_access">
+	    <a class="weui_cell" id="update_name_click">
+	        <div class="weui_cell_hd"></div>
+	        <div class="weui_cell_bd weui_cell_primary">
+	            <p>姓名</p>
+	        </div>
+	        <div class="weui_cell_ft">
+				飞龙在天
+	        </div>
+	    </a>
+
+		<a class="weui_cell" id="update_title_click">
+	        <div class="weui_cell_hd"></div>
+	        <div class="weui_cell_bd weui_cell_primary">
+	            <p>职位</p>
+	        </div>
+	        <div class="weui_cell_ft">
+				项目负责人
+	        </div>
+	    </a>
+
+	    <a class="weui_cell" id="update_phone_click">
+	        <div class="weui_cell_hd"></div>
+	        <div class="weui_cell_bd weui_cell_primary">
+	            <p>电话</p>
+	        </div>
+	        <div class="weui_cell_ft">
+				134****2313
+	        </div>
+	    </a>
+	</div>
+
+
+
+	<div class="weui_cells_title">第二联系人 <span class="fr notap" id="remove_click">删除</span></div>
+	<div class="weui_cells weui_cells_access">
+	    <a class="weui_cell" id="update_con_name_click">
+	        <div class="weui_cell_hd"></div>
+	        <div class="weui_cell_bd weui_cell_primary">
+	            <p>姓名</p>
+	        </div>
+	        <div class="weui_cell_ft">
+				小野贻松
+	        </div>
+	    </a>
+
+		<a class="weui_cell" id="update_con_title_click">
+	        <div class="weui_cell_hd"></div>
+	        <div class="weui_cell_bd weui_cell_primary">
+	            <p>职位</p>
+	        </div>
+	        <div class="weui_cell_ft">
+				技术经理
+	        </div>
+	    </a>
+
+	    <a class="weui_cell" id="update_con_phone_click">
+	        <div class="weui_cell_hd"></div>
+	        <div class="weui_cell_bd weui_cell_primary">
+	            <p>电话</p>
+	        </div>
+	        <div class="weui_cell_ft">
+				159****2045
+	        </div>
+	    </a>
+	</div>
+
+	<div class="pad-all-2t">
+		<a id="add_contact_man_click" class="weui_btn define_btn">＋添加联系人</a>
+	</div>
+	
+
+
+
+<!-- 删除联系人 -->	
+<div class="weui_dialog_confirm" id="remove_contact_man" style="display: none;">
+    <div class="weui_mask"></div>
+    <div class="weui_dialog">
+        <div class="weui_dialog_hd"></div>
+        <div class="weui_dialog_bd">
+			<table width="100%">
+				<tr>
+					<td align="center"><i class="weui_icon_msg weui_icon_warn"></i></td>
+				</tr>
+                <tr><td height="10"></td></tr>
+				<tr><td align="center">确定要删除联系人吗？</td></tr>
+			</table>	
+        </div>
+        <div class="weui_dialog_ft">
+            <a id="remove_no" class="weui_btn_dialog default">取消</a>
+            <a id="remove_yes" class="weui_btn_dialog main_color">确定</a>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- 修改姓名 -->	
+<div class="weui_dialog_confirm" id="update_name">
+    <div class="weui_mask"></div>
+    <div class="weui_dialog">
+    	<!-- Box title -->
+        <div class="weui_dialog_hd">
+        	<strong class="weui_dialog_title">修改姓名</strong>
+        </div>
+
+        <!-- Box body -->
+        <div class="weui_dialog_bd">
+        	<p class="inputholder">
+        		<input type="text" class="inputbox" value="飞龙在天">
+        	</p>
+        </div>
+
+        <!-- Box footer -->
+        <div class="weui_dialog_ft">
+            <a id="cancel_name" class="weui_btn_dialog default">取消</a>
+            <a id="submit_name" class="weui_btn_dialog main_color">确定</a>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- 修改电话 -->	
+<div class="weui_dialog_confirm" id="update_phone">
+    <div class="weui_mask"></div>
+    <div class="weui_dialog">
+    	<!-- Box title -->
+        <div class="weui_dialog_hd">
+        	<strong class="weui_dialog_title">修改电话</strong>
+        </div>
+
+        <!-- Box body -->
+        <div class="weui_dialog_bd">
+        	<table width="100%">
+        		<tr>
+        			<td align="center" colspan="3">
+        				<input type="text" class="inputbox" placeholder="新手机号">
+        			</td>
+        		</tr>
+        		<tr><td height="10" colspan="3"></td></tr>
+        		<tr>
+        			<td width="48%">
+        				<input type="text" class="inputbox" placeholder="验证码">
+        			</td>
+        			<td width="20"></td>
+        			<td width="48%" align="right">
+        				<a class="weui_btn weui_btn_default vericode">获取验证码</a>
+        			</td>
+        		</tr>
+        	</table>
+        </div>
+
+        <!-- Box footer -->
+        <div class="weui_dialog_ft">
+            <a id="cancel_phone" class="weui_btn_dialog default">取消</a>
+            <a id="submit_phone" class="weui_btn_dialog main_color">确定</a>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- 修改职位 -->	
+<div class="weui_dialog_confirm" id="update_title">
+    <div class="weui_mask"></div>
+    <div class="weui_dialog">
+    	<!-- Box title -->
+        <div class="weui_dialog_hd">
+        	<strong class="weui_dialog_title">修改职位</strong>
+        </div>
+
+        <!-- Box body -->
+        <div class="weui_dialog_bd">
+        	<p class="inputholder">
+        		<input type="text" class="inputbox" placeholder="输入职位">
+        	</p>
+        </div>
+
+        <!-- Box footer -->
+        <div class="weui_dialog_ft">
+            <a id="cancel_title" class="weui_btn_dialog default">取消</a>
+            <a id="submit_title" class="weui_btn_dialog main_color">确定</a>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- 添加联系人 -->	
+<div class="weui_dialog_confirm" id="add_contact_man">
+    <div class="weui_mask"></div>
+    <div class="weui_dialog">
+    	<!-- Box title -->
+        <div class="weui_dialog_hd">
+        	<strong class="weui_dialog_title">添加联系人</strong>
+        </div>
+
+        <!-- Box body -->
+        <div class="weui_dialog_bd">
+        	<table width="100%">
+        		<tr>
+        			<td align="center" colspan="3">
+        				<input type="text" class="inputbox" placeholder="姓名">
+        			</td>
+        		</tr>
+        		<tr><td height="10" colspan="3"></td></tr>
+        		<tr>
+        			<td align="center" colspan="3">
+        				<input type="text" class="inputbox" placeholder="职位">
+        			</td>
+        		</tr>
+        		<tr><td height="10" colspan="3"></td></tr>
+        		<tr>
+        			<td align="center" colspan="3">
+        				<input type="text" class="inputbox" placeholder="手机号">
+        			</td>
+        		</tr>
+        		<tr><td height="10" colspan="3"></td></tr>
+        		<tr>
+        			<td width="48%">
+        				<input type="text" class="inputbox" placeholder="验证码">
+        			</td>
+        			<td width="20"></td>
+        			<td width="48%" align="right">
+        				<a class="weui_btn weui_btn_default vericode">获取验证码</a>
+        			</td>
+        		</tr>
+        	</table>
+        </div>
+
+        <!-- Box footer -->
+        <div class="weui_dialog_ft">
+            <a id="add_no" class="weui_btn_dialog default">取消</a>
+            <a id="add_yes" class="weui_btn_dialog main_color">确定</a>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- 操作成功 -->
+<div id="toast" style="display: none;">
+    <div class="weui_mask_transparent"></div>
+    <div class="weui_toast">
+        <i class="weui_icon_toast"></i>
+        <p class="weui_toast_content">操作成功</p>
+    </div>
+</div>
+
+
+
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/phocus.js"></script>
+	<script src="../js/custom.js"></script>
+</body>
+</html>
